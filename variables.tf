@@ -24,9 +24,9 @@ EOT
     location             = string
     name                 = string
     resource_group_name  = string
-    category             = optional(string) # Default: "workbook"
+    category             = optional(string)
     description          = optional(string)
-    source_id            = optional(string) # Default: "azure monitor"
+    source_id            = optional(string)
     storage_container_id = optional(string)
     tags                 = optional(map(string))
     identity = optional(object({
