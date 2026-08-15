@@ -20,7 +20,7 @@ output "application_insights_workbooks_display_name" {
 }
 output "application_insights_workbooks_identity" {
   description = "Map of identity values across all application_insights_workbooks, keyed the same as var.application_insights_workbooks"
-  value       = { for k, v in azurerm_application_insights_workbook.application_insights_workbooks : k => v.identity if v.identity != null && length(v.identity) > 0 }
+  value       = { for k, v in azurerm_application_insights_workbook.application_insights_workbooks : k => one(v.identity) if v.identity != null && length(v.identity) > 0 }
 }
 output "application_insights_workbooks_location" {
   description = "Map of location values across all application_insights_workbooks, keyed the same as var.application_insights_workbooks"
